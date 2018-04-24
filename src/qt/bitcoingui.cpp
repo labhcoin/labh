@@ -446,10 +446,6 @@ void BitcoinGUI::createToolBars()
     toolbar->setMovable(false);
 
     addToolBar(Qt::TopToolBarArea, toolbar);
-
-    foreach(QAction *action, toolbar->actions()) {
-        toolbar->widgetForAction(action)->setFixedWidth(80);
-    }
 }
 
 void BitcoinGUI::setClientModel(ClientModel *clientModel)

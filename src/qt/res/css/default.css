@@ -202,6 +202,7 @@ QToolButton {
 	border-bottom-width: 3px;
 	padding-top: 8px;
 	padding-bottom: 8px;
+	min-width: 120px;
 }
 
 QToolButton:checked {
