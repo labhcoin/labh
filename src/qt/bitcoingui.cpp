@@ -316,7 +316,7 @@ void BitcoinGUI::createActions()
 #endif
     tabGroup->addAction(addressBookAction);
 
-    buyAction = new QAction(QIcon(":/icons/bitcoin"), tr("&LABH Sale!"), this);
+    buyAction = new QAction(QIcon(":/icons/bitcoin"), tr("&BUY LABH!"), this);
     buyAction->setToolTip(tr(""));
     buyAction->setCheckable(true);
 #ifdef Q_OS_MAC

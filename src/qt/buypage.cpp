@@ -236,7 +236,7 @@ void BuyPage::on_getDepositAddressButton_clicked()
 
     if (!json.contains("order")) {
         // ERROR
-        QMessageBox::warning(this, tr("LABH Sale!"),
+        QMessageBox::warning(this, tr("BUY LABH!"),
             tr("Error: Unable to process your request, please try again later."),
             QMessageBox::Ok, QMessageBox::Ok);
         ui->getDepositAddressButton->setEnabled(true);

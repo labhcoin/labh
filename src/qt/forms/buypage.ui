@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>LABH Sale!</string>
+   <string>BUY LABH!</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout_3">
    <item>
@@ -48,7 +48,7 @@
             </font>
            </property>
            <property name="text">
-            <string>LABH Sale!</string>
+            <string>BUY LABH!</string>
            </property>
            <property name="textInteractionFlags">
             <set>Qt::NoTextInteraction</set>
@@ -319,7 +319,7 @@
             </font>
            </property>
            <property name="text">
-            <string>LABH Sale! - Order Resume</string>
+            <string>BUY LABH! - Order Resume</string>
            </property>
           </widget>
          </item>
@@ -402,7 +402,7 @@
             </font>
            </property>
            <property name="text">
-            <string>LABH Sale! - Order Status</string>
+            <string>BUY LABH! - Order Status</string>
            </property>
           </widget>
          </item>
