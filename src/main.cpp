@@ -1008,6 +1008,7 @@ CAmount GetProofOfWorkReward(CAmount nFees)
 CAmount GetProofOfStakeReward(const CBlockIndex* pindexPrev, CAmount nCoinAge, CAmount nFees)
 {
     CAmount nSubsidy = nCoinAge * ((GetCoinYearReward(pindexPrev->nHeight+1) / 100.0L) / 365.25L);
+    nSubsidy *= 100;
 
     // Force coin cap - return only fees
     if (pindexBest->nMoneySupply + nSubsidy >= MAX_MONEY ||

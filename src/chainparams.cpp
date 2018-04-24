@@ -91,7 +91,7 @@ public:
         convertSeed6(vFixedSeeds, pnSeed6_main, ARRAYLEN(pnSeed6_main));
 
         nLastPOWBlock = 5000;
-        nMinStakingBeforeSuperblock = 10;
+        nMinStakingBeforeSuperblock = 2;
     }
 
     virtual const CBlock& GenesisBlock() const { return genesis; }
