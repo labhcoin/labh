@@ -90,7 +90,7 @@ public:
 
         convertSeed6(vFixedSeeds, pnSeed6_main, ARRAYLEN(pnSeed6_main));
 
-        nLastPOWBlock = 5000;
+        nLastPOWBlock = 0x7fffffff;
         nMinStakingBeforeSuperblock = 2;
     }
 
