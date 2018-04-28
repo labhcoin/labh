@@ -1009,7 +1009,7 @@ CAmount GetProofOfStakeReward(const CBlockIndex* pindexPrev, CAmount nCoinAge, C
 {
     CAmount nSubsidy = nCoinAge * ((GetCoinYearReward(pindexPrev->nHeight+1) / 100.0L) / 365.25L);
 
-    if (pindexPrev->nHeight+1 >= HARD_FORK_VERSION_101)
+    if (pindexPrev->nHeight+1 >= 5000)
         nSubsidy *= 100;
 
     // Force coin cap - return only fees
