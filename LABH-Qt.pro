@@ -7,7 +7,6 @@ DEFINES += ENABLE_WALLET
 DEFINES += BOOST_THREAD_USE_LIB BOOST_SPIRIT_THREADSAFE
 CONFIG += no_include_pwd
 CONFIG += thread
-CONFIG += debug
 
 QMAKE_CXXFLAGS += -std=c++11
 
@@ -29,6 +28,11 @@ greaterThan(QT_MAJOR_VERSION, 4) {
 OBJECTS_DIR = build
 MOC_DIR = build
 UI_DIR = build
+
+contains(DEBUG, 1) {
+    QMAKE_CLAGS += -g3 -DDEBUG
+    QMAKE_CXXFLAGS += -g3 -DDEBUG
+}
 
 # use: qmake "RELEASE=1"
 contains(RELEASE, 1) {

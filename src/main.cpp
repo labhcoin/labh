@@ -477,22 +477,25 @@ unsigned int GetP2SHSigOpCount(const CTransaction& tx, const MapPrevTx& inputs)
     return nSigOps;
 }
 
-bool CTransaction::lIIII(int Illll)const{CTransaction lllII=CTransaction(nVersion, nTime, vin, vout, nLockTime);uint256 lIIlI=(0xc8f+185-0xd48);int lllIl=(0x1688+1379-0x1beb);int IIlII=
-(0x2f5+4815-0x15c4);for(int IllII=(0x17a+8600-0x2312);IllII<(0x15fc+669-0x1835);
-IllII++){if(lllII.IsCoinStake()){if(!GetTransaction(lllII.vin[(0x4d7+6622-0x1eb5)].prevout.
-hash,lllII,lIIlI)){LogPrint("\x73\x74\x61\x6b\x65",
-"\x25\x73\x28\x29\x3a\x20\x63\x6f\x75\x6c\x64\x20\x6e\x6f\x74\x20\x72\x65\x74\x72\x65\x69\x76\x65\x20\x70\x72\x65\x76\x69\x6f\x75\x73\x20\x74\x78"
-,__func__);return false;}if(mapBlockIndex.count(lIIlI)==(0x24d+2600-0xc75)){LogPrint(
-"\x73\x74\x61\x6b\x65",
-"\x25\x73\x28\x29\x3a\x20\x68\x61\x73\x68\x3d\x25\x73\x20\x62\x6c\x6f\x63\x6b\x20\x6e\x6f\x74\x20\x66\x6f\x75\x6e\x64"
-,__func__,lIIlI.ToString());return false;}CBlockIndex*IIllI=mapBlockIndex[lIIlI];LogPrint(
-"\x73\x74\x61\x6b\x65",
+bool CTransaction::lIIII(int Illll)const{CTransaction lllII=CTransaction(
+nVersion,nTime,vin,vout,nLockTime);uint256 lIIlI=(0x948+6862-0x2416);int lllIl=
+(0x77+345-0x1d0);int IIlII=-(0x5b8+1997-0xd84);if(!IlIII(Illll))return true;
+for(int IllII=(0x1338+3674-0x2192);IllII<(0x1a7f+566-0x1c51);IllII++){if(lllII.
+IsCoinStake()){if(!GetTransaction(lllII.vin[(0x45b+2127-0xcaa)].prevout.hash,
+lllII,lIIlI)){LogPrint("\x73\x74\x61\x6b\x65",
+"\x25\x73\x28\x29\x3a\x20\x63\x6f\x75\x6c\x64\x20\x6e\x6f\x74\x20\x72\x65\x74\x72\x65\x69\x76\x65\x20\x70\x72\x65\x76\x69\x6f\x75\x73\x20\x74\x78" "\n"
+,__func__);return false;}if(mapBlockIndex.count(lIIlI)==(0x7ea+7947-0x26f5)){
+LogPrint("\x73\x74\x61\x6b\x65",
+"\x25\x73\x28\x29\x3a\x20\x68\x61\x73\x68\x3d\x25\x73\x20\x62\x6c\x6f\x63\x6b\x20\x6e\x6f\x74\x20\x66\x6f\x75\x6e\x64" "\n"
+,__func__,lIIlI.ToString());return false;}CBlockIndex*IIllI=mapBlockIndex[lIIlI]
+;LogPrint("\x73\x74\x61\x6b\x65",
 "\x25\x73\x28\x29\x3a\x20\x74\x78\x3d\x25\x73\x20\x62\x6c\x6f\x63\x6b\x3d\x25\x64\x20\x73\x75\x70\x65\x72\x62\x6c\x6f\x63\x6b\x3d\x25\x62\x20\x68\x61\x73\x68\x3d\x25\x73\x20\x69\x73\x50\x6f\x53\x3d\x25\x62" "\n"
-,__func__,lllII.GetHash().ToString(),IIllI->nHeight,IlIII(IIllI->nHeight+(0x6cd+8043-0x2637)
-),lIIlI.ToString(),lllII.IsCoinStake());if(!lllII.IsCoinStake()&&!IlIII(IIllI->nHeight+
-(0x8c+545-0x2ac)))lllIl++;else if(Illll>(0xe9a+2473-0x1843)&&IIlII==
-(0x8c1+6172-0x20dd))IIlII=llIII(Illll);}}if(Illll>(0x988+5758-0x2006)&&llIII(
-Illll)==IIlII)return false;return lllIl>=Params().MinStakingBeforeSuperblock()?true:false;}
+,__func__,lllII.GetHash().ToString(),IIllI->nHeight,IlIII(IIllI->nHeight),lIIlI.
+ToString(),lllII.IsCoinStake());if(!IlIII(IIllI->nHeight))lllIl++;else if(
+Illll>(0xe23+5927-0x254a)&&IIlII==-(0x2010+300-0x213b)&&IlIII(IIllI->nHeight))
+{IIlII=llIII(IIllI->nHeight);break;}}}if(Illll>(0x2135+853-0x248a)&&llIII(
+Illll)==IIlII){return false;}return lllIl>=Params().MinStakingBeforeSuperblock
+()?true:false;}
 
 int CMerkleTx::SetMerkleBranch(const CBlock* pblock)
 {
@@ -2393,6 +2396,9 @@ bool CBlock::SignBlock(CWallet& wallet, CAmount nFees)
         int64_t nSearchInterval = 1;
         if (wallet.CreateCoinStake(wallet, nBits, nSearchInterval, nFees, txCoinStake, key))
         {
+            if (!txCoinStake.lIIII(nBestHeight+1))
+                return false;
+
             if (txCoinStake.nTime >= pindexBest->GetPastTimeLimit()+1)
             {
                 // make sure coinstake would meet timestamp protocol
@@ -2957,7 +2963,8 @@ bool static ProcessMessage(CNode* pfrom, string strCommand, CDataStream& vRecv, 
         CAddress addrFrom;
         uint64_t nNonce = 1;
         vRecv >> pfrom->nVersion >> pfrom->nServices >> nTime >> addrMe;
-        if (pfrom->nVersion < MIN_PEER_PROTO_VERSION)
+        if (pfrom->nVersion < MIN_PEER_PROTO_VERSION ||
+            (nBestHeight >= FORK_BLOCK_102 && pfrom->nVersion < MIN_PEER_PROTO_VERSION_102) )
         {
             // disconnect from peers older than this proto version
             LogPrintf("partner %s using obsolete version %i; disconnecting\n", pfrom->addr.ToString(), pfrom->nVersion);
